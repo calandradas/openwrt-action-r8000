@@ -21,4 +21,4 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # Modify hostname
-sed -i 's/OpenWrt/R8000-Wrt/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/R8000Wrt/g' package/base-files/files/bin/config_generate
