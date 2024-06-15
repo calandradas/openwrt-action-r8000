@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt 24.04 Builder-R8000
+name: OpenWrt 23.03 Ubuntu 24.04 Builder-R8000
 
 on:
   repository_dispatch:
