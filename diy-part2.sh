@@ -16,6 +16,10 @@
 # Modify default theme
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
+rm -rf feeds/kenzo/luci-theme-argon feeds/kenzo/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/kenzo/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luci-app-argon-config
+
 # goland 2.1 to golang 2.2
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
