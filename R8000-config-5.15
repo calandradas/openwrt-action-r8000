@@ -2224,9 +2224,8 @@ CONFIG_BUSYBOX_CONFIG_TIME=y
 #
 # Networking Utilities
 #
-CONFIG_BUSYBOX_CONFIG_FEATURE_IPV6=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_IPV6 is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_UNIX_LOCAL is not set
-# CONFIG_BUSYBOX_CONFIG_FEATURE_PREFER_IPV4_ADDRESS is not set
 CONFIG_BUSYBOX_CONFIG_VERBOSE_RESOLUTION_ERRORS=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_ETC_NETWORKS is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_ETC_SERVICES is not set
@@ -2291,7 +2290,6 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_NTPD_SERVER=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_NTPD_CONF is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_NTP_AUTH is not set
 CONFIG_BUSYBOX_CONFIG_PING=y
-CONFIG_BUSYBOX_CONFIG_PING6=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_FANCY_PING=y
 # CONFIG_BUSYBOX_CONFIG_PSCAN is not set
 CONFIG_BUSYBOX_CONFIG_ROUTE=y
@@ -2306,7 +2304,6 @@ CONFIG_BUSYBOX_CONFIG_ROUTE=y
 # CONFIG_BUSYBOX_CONFIG_TFTPD is not set
 # CONFIG_BUSYBOX_CONFIG_TLS is not set
 CONFIG_BUSYBOX_CONFIG_TRACEROUTE=y
-CONFIG_BUSYBOX_CONFIG_TRACEROUTE6=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_TRACEROUTE_VERBOSE=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_TRACEROUTE_USE_ICMP is not set
 # CONFIG_BUSYBOX_CONFIG_TUNCTL is not set
@@ -2328,7 +2325,6 @@ CONFIG_BUSYBOX_CONFIG_UDHCPC=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_UDHCPC_ARPING is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_UDHCPC_SANITIZEOPT is not set
 CONFIG_BUSYBOX_CONFIG_UDHCPC_DEFAULT_SCRIPT="/usr/share/udhcpc/default.script"
-# CONFIG_BUSYBOX_CONFIG_UDHCPC6 is not set
 
 #
 # Common options for DHCP applets
@@ -2473,11 +2469,11 @@ CONFIG_BUSYBOX_CONFIG_LOGGER=y
 # CONFIG_PACKAGE_busybox-selinux is not set
 CONFIG_PACKAGE_ca-bundle=y
 # CONFIG_PACKAGE_ca-certificates is not set
-CONFIG_PACKAGE_dnsmasq=y
+# CONFIG_PACKAGE_dnsmasq is not set
 # CONFIG_PACKAGE_dnsmasq-dhcpv6 is not set
 CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_dnsmasq_full_dhcp=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+# CONFIG_PACKAGE_dnsmasq_full_dhcpv6 is not set
 CONFIG_PACKAGE_dnsmasq_full_dnssec=y
 CONFIG_PACKAGE_dnsmasq_full_auth=y
 # CONFIG_PACKAGE_dnsmasq_full_ipset is not set
@@ -2485,7 +2481,7 @@ CONFIG_PACKAGE_dnsmasq_full_nftset=y
 CONFIG_PACKAGE_dnsmasq_full_conntrack=y
 CONFIG_PACKAGE_dnsmasq_full_noid=y
 # CONFIG_PACKAGE_dnsmasq_full_broken_rtc is not set
-CONFIG_PACKAGE_dnsmasq_full_tftp=y
+# CONFIG_PACKAGE_dnsmasq_full_tftp is not set
 CONFIG_PACKAGE_dropbear=y
 
 #
@@ -3317,7 +3313,7 @@ CONFIG_PACKAGE_kmod-nf-nat=y
 # CONFIG_PACKAGE_kmod-nf-nathelper-extra is not set
 CONFIG_PACKAGE_kmod-nf-reject=y
 CONFIG_PACKAGE_kmod-nf-reject6=y
-CONFIG_PACKAGE_kmod-nf-socket=yopenwrt-23.05
+CONFIG_PACKAGE_kmod-nf-socket=y
 CONFIG_PACKAGE_kmod-nf-tproxy=y
 CONFIG_PACKAGE_kmod-nfnetlink=y
 # CONFIG_PACKAGE_kmod-nfnetlink-log is not set
@@ -5646,11 +5642,26 @@ CONFIG_PACKAGE_luci-app-opkg=y
 # CONFIG_PACKAGE_luci-app-pagekitec is not set
 # CONFIG_PACKAGE_luci-app-partexp is not set
 # CONFIG_PACKAGE_luci-app-passwall is not set
-# CONFIG_PACKAGE_luci-app-passwall2 is not set
+CONFIG_PACKAGE_luci-app-passwall2=y
 
 #
 # Configuration
 #
+# CONFIG_PACKAGE_luci-app-passwall2_Iptables_Transparent_Proxy is not set
+CONFIG_PACKAGE_luci-app-passwall2_Nftables_Transparent_Proxy=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_SingBox is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin is not set
 # end of Configuration
 
 # CONFIG_PACKAGE_luci-app-pbr is not set
@@ -5929,6 +5940,7 @@ CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-opkg-vi is not set
 CONFIG_PACKAGE_luci-i18n-opkg-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-opkg-zh-tw is not set
+CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-upnp-ar is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-bg is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-bn is not set
@@ -6170,7 +6182,7 @@ CONFIG_PACKAGE_curl=y
 # CONFIG_IPTGEOIP_PRESERVE is not set
 # end of Select iptgeoip options
 
-# CONFIG_PACKAGE_miniupnpc is not set
+CONFIG_PACKAGE_miniupnpc=y
 # CONFIG_PACKAGE_miniupnpd-iptables is not set
 CONFIG_PACKAGE_miniupnpd-nftables=y
 # CONFIG_PACKAGE_natpmpc is not set
