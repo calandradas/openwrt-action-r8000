@@ -275,7 +275,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@master
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 3
-        delete_tags: false
+        keep_latest: 5
+        delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.R8000_ACT }}
