@@ -6,7 +6,10 @@
 ![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
 
-A template for building Netgear R8000 OpenWrt with GitHub Actions
+A template for building **Netgear R8000** OpenWrt with GitHub Actions.
+Source code from https://github.com/openwrt/openwrt branch 23.05.
+Compile at 02:00 every Wed.
+
 
 ## Usage
 
