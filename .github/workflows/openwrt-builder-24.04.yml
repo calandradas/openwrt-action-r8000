@@ -15,15 +15,15 @@ name: OpenWrt23.05 Ubuntu24.04 R8000 Builder
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-  #  - cron: 00 02 * * *
+  schedule:
+    - cron: 00 02 * * *
 #    inputs:
 #      ssh:
 #        description: 'SSH connection to Actions'
 #        required: false
 #        default: 'false'
 env:
-  REPO_URL: https://github.com/calandradas/openwrt-r8000
+  REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: R8000-config-5.15
@@ -33,6 +33,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
+  FIRMWARE_TAG: Netgear-R8000
   TZ: Asia/Shanghai
 
 jobs:
@@ -111,6 +112,8 @@ jobs:
         echo "DEVICE_TARGET=$DEVICE_TARGET" >> $GITHUB_ENV
         DEVICE_SUBTARGET=$(cat .config | grep CONFIG_TARGET_SUBTARGET | awk -F '"' '{print $2}')
         echo "DEVICE_SUBTARGET=$DEVICE_SUBTARGET" >> $GITHUB_ENV
+        DEVICE_ARCH=$(cat .config | grep CONFIG_TARGET_ARCH_PACKAGES | awk -F '"' '{print $2}')
+        echo "DEVICE_ARCH=$DEVICE_ARCH" >> $GITHUB_ENV
         
     - name: Cache Toolchain
       if: env.CACHE_TOOLCHAIN == 'true'
@@ -217,14 +220,14 @@ jobs:
         #body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
         body: |
-          **This is OpenWrt Firmware for Netgear ${{ env.FIRMWARE }}**
+          **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
+          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.DEVICE_ARCH }}
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🚀 内核版本: ${{ env.KERNEL }}
+          - 🚀 内核版本: 5.15
           - 🌐 默认地址: 192.168.1.1
-          - 🔑 默认密码: password
+          - 🔑 默认密码: root/password
           ### 🚀 包含应用
           - nano,su,sulogin,wget  
           - mount-utils,block-mount
