@@ -217,7 +217,7 @@ jobs:
         #body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
         body: |
-          **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
+          **This is OpenWrt Firmware for Netgear ${{ env.FIRMWARE }}**
           ### 📒 固件信息
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
           - ⚽ 固件源码: ${{ env.REPO_URL }}
@@ -225,6 +225,36 @@ jobs:
           - 🚀 内核版本: ${{ env.KERNEL }}
           - 🌐 默认地址: 192.168.1.1
           - 🔑 默认密码: password
+          ### 🚀 包含应用
+          - nano,su,sulogin,wget  
+          - mount-utils,block-mount
+
+          - kmod-nft-tproxy  
+          - kmod-nf-tproxy  
+          - kmod-fs-vfat
+          - kmod-fs-exfat  
+          - kmod-usb-storage  
+          - kmod-usb-uhci  
+          - kmod-usb-ohci
+          - kmod-tcp-bbr
+
+          - brcmfmac-firmware-4366b1-pcie  
+          - firmware broadcom-4360-sprom  
+          - firmware bmc4360  
+          - firmware libnatpmp
+
+          - miniupnpd-nftables  
+          - libminiupnpc
+
+          - luci->Collections->luci  
+          - luci->Modules->Translations zh_Hans
+
+          - luci-app-upnp  
+          - luci-proto-ppp  
+          - luci-app-argon  
+          - luci-app-commands  
+          - luci-app-firewall  
+          - luci-app-opkg  
           ### 🧊 固件版本
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
           - ${{ env.COMMIT_AUTHOR }}
