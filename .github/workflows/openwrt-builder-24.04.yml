@@ -72,7 +72,7 @@ jobs:
         sudo apt autoremove --purge
         sudo apt clean
         sudo timedatectl set-timezone "$TZ"
-        #sudo mkdir -p /workdir
+        sudo rm -fr /workdir
         #sudo chown $USER:$GROUPS /workdir
 
     - name: Combine Disks
