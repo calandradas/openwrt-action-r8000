@@ -120,7 +120,7 @@ jobs:
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: true
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
+        mixkey: R8000-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
     - name: Load custom feeds & run diy shell 1 before install feeds
