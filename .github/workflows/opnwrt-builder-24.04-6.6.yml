@@ -15,8 +15,8 @@ name: OpenWrt23.05 Ubuntu24.04 R8000 Builder
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 00 00 * * MON
+ # schedule:
+#    - cron: 00 00 * * MON
 #    inputs:
 #      ssh:
 #        description: 'SSH connection to Actions'
