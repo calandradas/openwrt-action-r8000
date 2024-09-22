@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt23.05 Ubuntu24.04 R8000 Builder
+name: OpenWrt Master Ubuntu24.04 R8000 Builder
 
 on:
   repository_dispatch:
