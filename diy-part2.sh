@@ -24,5 +24,9 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luc
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
+# miniupnpd 2.3.7 to 2.0.2
+rm -rf feeds/packages/net/miniupnpd
+git clone https://github.com/immortalwrt/packages/tree/openwrt-21.02/net/miniupnpd feeds/packages/net/miniupnpd
+
 # Modify hostname
 sed -i 's/OpenWrt/R8000Wrt/g' package/base-files/files/bin/config_generate
