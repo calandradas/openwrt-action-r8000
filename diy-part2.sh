@@ -26,9 +26,12 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # miniupnpd 2.3.7 to 2.1.20200510
 #sed -i 's/2.3.7/2.1.20200510/g' feeds/packages/net/miniupnpd/Makefile
-cd feeds/packages/net/miniupnpd
+git clone --filter=blob:none --no-checkout -b openwrt-18.06 https://github.com/openwrt/packages miniupnpd-tmp
+cd miniupnpd-tmp
+git sparse-checkout init --cone
+git sparse-checkout set net/miniupnpd
 git checkout openwrt-18.06
-git pull
+
 
 # Modify hostname
 sed -i 's/OpenWrt/R8000Wrt/g' package/base-files/files/bin/config_generate
