@@ -25,8 +25,10 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # miniupnpd 2.3.7 to 2.1.20200510
-sed -i 's/2.3.7/2.1.20200510/g' feeds/packages/net/miniupnpd/Makefile
-#git clone https://github.com/immortalwrt/packages/tree/openwrt-21.02/net/miniupnpd feeds/packages/net/miniupnpd
+#sed -i 's/2.3.7/2.1.20200510/g' feeds/packages/net/miniupnpd/Makefile
+cd feeds/packages/net/miniupnpd
+git checkout openwrt-18.06
+git pull
 
 # Modify hostname
 sed -i 's/OpenWrt/R8000Wrt/g' package/base-files/files/bin/config_generate
