@@ -27,12 +27,12 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # miniupnpd 2.3.7 to 2.1.20200510
 #sed -i 's/2.3.7/2.1.20200510/g' feeds/packages/net/miniupnpd/Makefile
 rm -fr feeds/packages/net/miniupnpd
-git clone --filter=blob:none --no-checkout -b openwrt-18.06 https://github.com/openwrt/packages miniupnpd-tmp
+git clone --filter=blob:none --no-checkout https://github.com/openwrt/packages miniupnpd-tmp
 cd miniupnpd-tmp
 git sparse-checkout init --cone
 git sparse-checkout set net/miniupnpd
 git checkout openwrt-18.06
-cp -r net/miniupnpd feeds/packages/net/
+cp -r net/miniupnpd ../feeds/packages/net/
 cd ..
 rm -fr miniupnpd-tmp
 
