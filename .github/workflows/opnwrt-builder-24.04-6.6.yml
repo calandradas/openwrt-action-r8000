@@ -16,7 +16,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 00 00 * * MON
+    - cron: 00 01 * * SUN
 #    inputs:
 #      ssh:
 #        description: 'SSH connection to Actions'
