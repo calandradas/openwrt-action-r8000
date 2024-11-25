@@ -253,6 +253,7 @@ jobs:
           - luci->Modules->Translations zh_Hans
 
           - luci-app-upnp  
+          - luci-app-smartdns  
           - luci-proto-ppp  
           - luci-app-argon-config  
           - luci-app-commands  
