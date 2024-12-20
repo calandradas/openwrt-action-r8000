@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-#replace luci-theme-argon to lastest update
+# replace luci-theme-argon to lastest update
 rm -rf feeds/kenzo/luci-theme-argon feeds/kenzo/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/kenzo/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luci-app-argon-config
@@ -18,6 +18,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luc
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/utils/v2dat
 
+# replace smartdns to lastest update
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
 rm -rf feeds/luci/applications/luci-app-smartdns
 git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
