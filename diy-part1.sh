@@ -17,9 +17,9 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luc
 
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/utils/v2dat
+
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
 rm -rf feeds/luci/applications/luci-app-smartdns
-
 git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 sed -i 's/1.2024.45/1.2024.46.0.13/g' feeds/packages/net/smartdns/Makefile
 git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
