@@ -123,16 +123,22 @@ jobs:
         mixkey: R8000-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
-    - name: Load custom feeds & run diy shell 1 before install feeds
+    - name: Load custom feeds & run diy shell 0 before update feeds
       run: |
         [ -e $FEEDS_CONF ] && cp $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        chmod +x $DIY_P0_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/$DIY_P0_SH
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Run diy shell 1 before install feeds
+      run: |
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+        
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
