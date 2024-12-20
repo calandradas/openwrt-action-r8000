@@ -19,3 +19,28 @@
 
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 #echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+
+rm -rf feeds/kenzo/luci-theme-argon feeds/kenzo/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/kenzo/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luci-app-argon-config
+
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+
+# goland 2.1 to golang 2.2
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+
+# miniupnpd 2.3.7 to 2.1.20200510
+#rm -fr feeds/packages/net/miniupnpd
+#git clone --filter=blob:none --no-checkout https://github.com/openwrt/packages miniupnpd-tmp
+#cd miniupnpd-tmp
+#git sparse-checkout init --cone
+#git sparse-checkout set net/miniupnpd
+#git checkout openwrt-18.06
+#cp -r net/miniupnpd ../feeds/packages/net/
+#cd ..
+#rm -fr miniupnpd-tmp
+
+
