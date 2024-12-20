@@ -236,7 +236,7 @@ jobs:
           - 🔑 默认密码: root/password
           ### 🚀 包含应用
           - nano,su,sulogin,wget  
-          - mount-utils,block-mount
+          - mount-utils,block-mount,dig
 
           - kmod-nft-tproxy  
           - kmod-nf-tproxy  
