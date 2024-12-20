@@ -27,6 +27,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default-6.6
   CONFIG_FILE: R8000-config-6.6
+  DIY_P0_SH: diy-part0.sh
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   CACHE_TOOLCHAIN: true
