@@ -10,13 +10,13 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt 24.10 Ubuntu24.04 R8000 Builder
+name: OpenWrt Master Ubuntu24.04 R8000 Builder
 
 on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 50 23 * * SUN
+    - cron: 50 00 * * MON
 #    inputs:
 #      ssh:
 #        description: 'SSH connection to Actions'
@@ -27,6 +27,7 @@ env:
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default-6.6
   CONFIG_FILE: R8000-config-6.6
+  DIY_P0_SH: diy-part0.sh
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   CACHE_TOOLCHAIN: true
@@ -123,16 +124,22 @@ jobs:
         mixkey: R8000-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
-    - name: Load custom feeds & run diy shell 1 before install feeds
+    - name: Load custom feeds & run diy shell 0 before update feeds
       run: |
         [ -e $FEEDS_CONF ] && cp $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        chmod +x $DIY_P0_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/$DIY_P0_SH
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Run diy shell 1 before install feeds
+      run: |
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+        
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
@@ -230,7 +237,7 @@ jobs:
           - 🔑 默认密码: root/password
           ### 🚀 包含应用
           - nano,su,sulogin,wget  
-          - mount-utils,block-mount
+          - mount-utils,block-mount,dig
 
           - kmod-nft-tproxy  
           - kmod-nf-tproxy  
