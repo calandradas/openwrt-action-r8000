@@ -20,13 +20,19 @@
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 #echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 
+#replace luci-theme-argon to lastest update
 rm -rf feeds/kenzo/luci-theme-argon feeds/kenzo/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/kenzo/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luci-app-argon-config
 
 rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
+
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+sed -i 's/1.2024.45/1.2024.46.0.13/g' feeds/packages/net/smartdns/Makefile
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+sed -i 's/1.2024.45/1.2024.46/g' feeds/luci/applications/luci-app-smartdns/Makefile
 
 # goland 2.1 to golang 2.2
 rm -rf feeds/packages/lang/golang
