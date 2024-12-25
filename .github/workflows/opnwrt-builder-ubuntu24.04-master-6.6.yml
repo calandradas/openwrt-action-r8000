@@ -211,7 +211,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=${{ env.FIRMWARE_TAG }}-openwrt-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=${{ env.FIRMWARE_TAG }}-openwrt-${{ env.REPO_BRANCH }}-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
@@ -273,11 +273,11 @@ jobs:
           - ${{ env.COMMIT_MESSAGE }}
           - ${{ env.COMMIT_HASH }}
 
-    #- name: Delete workflow runs
-    #  uses: Mattraks/delete-workflow-runs@main
-    #  with:
-    #    retain_days: 0
-    #    keep_minimum_runs: 2
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 0
+        keep_minimum_runs: 2
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@master
