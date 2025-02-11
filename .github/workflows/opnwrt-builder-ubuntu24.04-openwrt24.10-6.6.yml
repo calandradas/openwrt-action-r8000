@@ -274,7 +274,7 @@ jobs:
           - ${{ env.COMMIT_HASH }}
 
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@master
+      uses: Mattraks/delete-workflow-runs@main
       with:
         token: ${{ secrets.R8000_ACT }}
         retain_days: 0
