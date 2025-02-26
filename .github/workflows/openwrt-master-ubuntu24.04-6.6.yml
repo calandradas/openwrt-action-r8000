@@ -94,13 +94,13 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
-        COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
+        COMMIT_AUTHOR=$(git show -s --date=short --format="Commit Author: %an")
         echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> $GITHUB_ENV
-        COMMIT_DATE=$(git show -s --date=short --format="时间: %ci")
+        COMMIT_DATE=$(git show -s --date=short --format="Commit Timestap: %ci")
         echo "COMMIT_DATE=$COMMIT_DATE" >> $GITHUB_ENV
-        COMMIT_MESSAGE=$(git show -s --date=short --format="内容: %s")
+        COMMIT_MESSAGE=$(git show -s --date=short --format="Commit Message: %s")
         echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
-        COMMIT_HASH=$(git show -s --date=short --format="hash: %H")
+        COMMIT_HASH=$(git show -s --date=short --format="Hash: %H")
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
 
     - name: Generate Variables
@@ -267,7 +267,8 @@ jobs:
           - luci-app-firewall  
           - luci-app-opkg  
           ### 🧊 Firmware Version
-          - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
+          - The last update record before firmware compilation
+          - Repo URL: [${{ env.REPO_URL }}/tree/${{ env.REPO_BRANCH }}]
           - ${{ env.COMMIT_AUTHOR }}
           - ${{ env.COMMIT_DATE }}
           - ${{ env.COMMIT_MESSAGE }}
