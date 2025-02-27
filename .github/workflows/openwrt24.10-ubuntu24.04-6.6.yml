@@ -94,13 +94,13 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
-        COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
+        COMMIT_AUTHOR=$(git show -s --date=short --format="Commit Author: %an")
         echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> $GITHUB_ENV
-        COMMIT_DATE=$(git show -s --date=short --format="时间: %ci")
+        COMMIT_DATE=$(git show -s --date=short --format="Commit Timestap: %ci")
         echo "COMMIT_DATE=$COMMIT_DATE" >> $GITHUB_ENV
-        COMMIT_MESSAGE=$(git show -s --date=short --format="内容: %s")
+        COMMIT_MESSAGE=$(git show -s --date=short --format="Commit Message: %s")
         echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
-        COMMIT_HASH=$(git show -s --date=short --format="hash: %H")
+        COMMIT_HASH=$(git show -s --date=short --format="Hash: %H")
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
 
     - name: Generate Variables
@@ -228,13 +228,13 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 固件信息
-          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.DEVICE_ARCH }}
-          - ⚽ 固件源码: ${{ env.REPO_URL }}
-          - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🚀 内核版本: 6.6
-          - 🌐 默认地址: 192.168.1.1
-          - 🔑 默认密码: root/password
+          ### 📒 Firmware Info.
+          - 💻 Platform Arch: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.DEVICE_ARCH }}
+          - ⚽ Firmware Code: ${{ env.REPO_URL }}
+          - 💝 Branch: ${{ env.REPO_BRANCH }}
+          - 🚀 Kernel: 6.6
+          - 🌐 Default Address: 192.168.1.1
+          - 🔑 Default Password: root/password
           ### 🚀 包含应用
           - nano,su,sulogin,wget  
           - mount-utils,block-mount,dig
@@ -266,8 +266,9 @@ jobs:
           - luci-app-commands  
           - luci-app-firewall  
           - luci-app-opkg  
-          ### 🧊 固件版本
-          - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
+          ### 🧊 Firmware Version
+          - The last update record before firmware compilation
+          - Repo URL: [${{ env.REPO_URL }}/tree/${{ env.REPO_BRANCH }}]
           - ${{ env.COMMIT_AUTHOR }}
           - ${{ env.COMMIT_DATE }}
           - ${{ env.COMMIT_MESSAGE }}
