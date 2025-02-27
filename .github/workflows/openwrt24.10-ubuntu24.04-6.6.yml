@@ -235,7 +235,7 @@ jobs:
           - 🚀 Kernel: 6.6
           - 🌐 Default Address: 192.168.1.1
           - 🔑 Default Password: root/password
-          ### 🚀 包含应用
+          ### 🚀 Included Mods
           - nano,su,sulogin,wget  
           - mount-utils,block-mount,dig
 
