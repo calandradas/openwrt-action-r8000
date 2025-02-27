@@ -260,7 +260,7 @@ jobs:
           - luci-app-opkg  
           ### 🧊 Firmware Version
           - The last update record before firmware compilation
-          - Repo URL: [${{ env.REPO_URL }}/tree/${{ env.REPO_BRANCH }}]
+          - Repo URL: [${{ env.REPO_URL }}/tree/${{ env.REPO_BRANCH }}](${{ env.REPO_URL }}/tree/${{ env.REPO_BRANCH }})
           - ${{ env.COMMIT_AUTHOR }}
           - ${{ env.COMMIT_DATE }}
           - ${{ env.COMMIT_MESSAGE }}
