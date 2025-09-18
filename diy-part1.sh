@@ -19,13 +19,14 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/utils/v2dat
 
 # replace smartdns to lastest update
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
-rm -rf feeds/packages/smartdns
-rm -rf feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/smartdns
-sed -i 's/1.2024.45/1.2024.46.2/g' feeds/packages/smartdns/Makefile
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-sed -i 's/1.2024.45/1.2024.46/g' feeds/luci/applications/luci-app-smartdns/Makefile
+#rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*}
+#rm -rf feeds/packages/smartdns
+#rm -rf feeds/luci/applications/luci-app-smartdns
+#git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/smartdns
+#sed -i 's/1.2024.45/1.2024.46.2/g' feeds/packages/smartdns/Makefile
+#git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+#sed -i 's/1.2024.45/1.2024.46/g' feeds/luci/applications/luci-app-smartdns/Makefile
 
 # goland 2.1 to golang 2.2
 rm -rf feeds/packages/lang/golang
