@@ -217,8 +217,8 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
-      uses: softprops/action-gh-release@master
-      #uses: ncipollo/release-action@v1
+      #uses: softprops/action-gh-release@v3
+      uses: ncipollo/release-action@main
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         #GITHUB_TOKEN: ${{ secrets.R8000_ACT }}
