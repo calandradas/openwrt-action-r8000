@@ -17,6 +17,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luc
 
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/small/mihomo
 
 # replace smartdns to lastest update
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
