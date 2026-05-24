@@ -15,13 +15,13 @@ rm -rf feeds/kenzo/luci-theme-argon feeds/kenzo/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/kenzo/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/kenzo/luci-app-argon-config
 
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/small/mihomo
+#rm -rf feeds/luci/applications/luci-app-mosdns
+#rm -rf feeds/packages/utils/v2dat
+#rm -rf feeds/small/mihomo
 
 # replace smartdns to lastest update
 #rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns}
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*}
+#rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*}
 #rm -rf feeds/packages/smartdns
 #rm -rf feeds/luci/applications/luci-app-smartdns
 #git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/smartdns
