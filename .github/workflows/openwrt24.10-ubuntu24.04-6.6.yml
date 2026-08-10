@@ -24,7 +24,7 @@ on:
 #        default: 'false'
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: openwrt-25.12.5
   FEEDS_CONF: feeds.conf.default-6.6
   CONFIG_FILE: R8000-config-6.6
   DIY_P0_SH: diy-part0.sh
